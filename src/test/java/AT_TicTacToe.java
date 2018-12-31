@@ -28,15 +28,15 @@ public class AT_TicTacToe {
         ───┼───┼───
          X │ O │ O
          */
-        game.placeXAt(new RowIndex(1), new ColumnIndex(0));
-        game.placeOAt(new RowIndex(0), new ColumnIndex(1));
-        game.placeXAt(new RowIndex(1), new ColumnIndex(1));
-        game.placeOAt(new RowIndex(1), new ColumnIndex(2));
-        game.placeXAt(new RowIndex(0), new ColumnIndex(0));
-        game.placeOAt(new RowIndex(2), new ColumnIndex(2));
-        game.placeXAt(new RowIndex(0), new ColumnIndex(2));
-        game.placeOAt(new RowIndex(2), new ColumnIndex(0));
-        game.placeXAt(new RowIndex(2), new ColumnIndex(1));
+        game.playerX(new RowIndex(1), new ColumnIndex(0));
+        game.playerO(new RowIndex(0), new ColumnIndex(1));
+        game.playerX(new RowIndex(1), new ColumnIndex(1));
+        game.playerO(new RowIndex(1), new ColumnIndex(2));
+        game.playerX(new RowIndex(0), new ColumnIndex(0));
+        game.playerO(new RowIndex(2), new ColumnIndex(2));
+        game.playerX(new RowIndex(0), new ColumnIndex(2));
+        game.playerO(new RowIndex(2), new ColumnIndex(0));
+        game.playerX(new RowIndex(2), new ColumnIndex(1));
 
         assertEquals(GameState.DRAW, game.state());
     }

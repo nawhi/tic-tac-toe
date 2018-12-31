@@ -5,11 +5,11 @@ public class TicTacToeGame {
         return null;
     }
 
-    public void placeXAt(RowIndex row, ColumnIndex column) {
+    public void playerX(RowIndex row, ColumnIndex column) {
 
     }
 
-    public void placeOAt(RowIndex row, ColumnIndex column) {
+    public void playerO(RowIndex row, ColumnIndex column) {
 
     }
 }
