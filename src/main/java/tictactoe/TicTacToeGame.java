@@ -16,6 +16,9 @@ public class TicTacToeGame {
     }
 
     public void playerO(RowIndex row, ColumnIndex column) {
-        throw new OrderOfPlayException("Player X must go first");
+        if (turn.ofPlayerX())
+            throw new OrderOfPlayException("It's not Player O's turn");
+
+        turn.next();
     }
 }
