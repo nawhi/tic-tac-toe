@@ -7,10 +7,6 @@ class TurnTracker {
         isPlayerX = !isPlayerX;
     }
 
-    public boolean ofPlayerX() {
-        return isPlayerX;
-    }
-
     public void assertPlayerX() {
         if (!isPlayerX)
             throw new OrderOfPlayException("It's not Player X's turn");

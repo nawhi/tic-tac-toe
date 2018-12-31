@@ -11,17 +11,13 @@ public class Game {
 
     public void playerX(RowIndex row, ColumnIndex column) {
         turn.assertPlayerX();
-
         board.addX(row, column);
-
         turn.next();
     }
 
     public void playerO(RowIndex row, ColumnIndex column) {
         turn.assertPlayerO();
-
         board.addO(row, column);
-
         turn.next();
     }
 }
