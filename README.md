@@ -7,8 +7,9 @@ The rules of the tic tac toe game are the following:
 * Players take turns taking fields until the game is over
 * A player can only take a field if it is currently unoccupied
 
-The game is over when any of the following conditions are satisfied:
-* all fields are taken
-* all fields in a row are taken by the same player
-* all fields in a diagonal are taken by the same player
-* all fields in a column are taken by the same player
+A player wins the game when any of the following are satisfied:
+* all fields in a row are taken by that player
+* all fields in a diagonal are taken by that player 
+* all fields in a column are taken by that player
+
+The game is a draw if neither player wins and all fields on the game are occupied.
