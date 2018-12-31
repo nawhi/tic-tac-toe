@@ -10,6 +10,6 @@ public class TicTacToeGame {
     }
 
     public void playerO(RowIndex row, ColumnIndex column) {
-
+        throw new OrderOfPlayException("Player X must go first");
     }
 }
