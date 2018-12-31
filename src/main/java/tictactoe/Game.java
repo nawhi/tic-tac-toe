@@ -10,8 +10,7 @@ public class Game {
     }
 
     public void playerX(RowIndex row, ColumnIndex column) {
-        if (!turn.ofPlayerX())
-            throw new OrderOfPlayException("It's not Player X's turn");
+        turn.assertPlayerX();
 
         board.addX(row, column);
 
@@ -19,8 +18,7 @@ public class Game {
     }
 
     public void playerO(RowIndex row, ColumnIndex column) {
-        if (turn.ofPlayerX())
-            throw new OrderOfPlayException("It's not Player O's turn");
+        turn.assertPlayerO();
 
         board.addO(row, column);
 
