@@ -1,6 +1,7 @@
 package tictactoe;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -18,8 +19,29 @@ class BoardShould {
     }
 
     @Test
-    public void have_state_as_initial_when_created() {
+    public void have_INITIAL_state_when_created() {
         assertEquals(GameState.INITIAL, board.state());
+    }
+
+    @Test
+    public void have_IN_PROGRESS_state_when_half_full() {
+        board.addX(new RowIndex(0), new ColumnIndex(0));
+        assertEquals(GameState.IN_PROGRESS, board.state());
+    }
+
+    @Test
+    public void have_DRAW_state_when_filled() {
+        board.addX(new RowIndex(1), new ColumnIndex(0));
+        board.addO(new RowIndex(0), new ColumnIndex(1));
+        board.addX(new RowIndex(1), new ColumnIndex(1));
+        board.addO(new RowIndex(1), new ColumnIndex(2));
+        board.addX(new RowIndex(0), new ColumnIndex(0));
+        board.addO(new RowIndex(2), new ColumnIndex(2));
+        board.addX(new RowIndex(0), new ColumnIndex(2));
+        board.addO(new RowIndex(2), new ColumnIndex(0));
+        board.addX(new RowIndex(2), new ColumnIndex(1));
+
+        assertEquals(GameState.DRAW, board.state());
     }
 
     @Test

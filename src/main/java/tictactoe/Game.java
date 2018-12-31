@@ -15,6 +15,7 @@ public class Game {
         turn.next();
     }
 
+
     public void playerO(RowIndex row, ColumnIndex column) {
         turn.assertPlayerO();
         board.addO(row, column);

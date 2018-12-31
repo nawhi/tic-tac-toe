@@ -3,7 +3,6 @@ package tictactoe;
 public class Board {
 
     Squares squares = new Squares();
-    private GameState state = GameState.INITIAL;
 
     public void addX(RowIndex row, ColumnIndex column) {
         squares.addX(row, column);
@@ -14,6 +13,12 @@ public class Board {
     }
 
     public GameState state() {
-        return state;
+        if (squares.allEmpty())
+            return GameState.INITIAL;
+
+        if (squares.allOccupied())
+            return GameState.DRAW;
+
+        return GameState.IN_PROGRESS;
     }
 }

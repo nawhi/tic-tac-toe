@@ -27,4 +27,24 @@ public class Squares {
     private Square squareFor(RowIndex row, ColumnIndex column) {
         return squares[row.get()][column.get()];
     }
+
+    public boolean allOccupied() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (squares[i][j].empty())
+                    return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean allEmpty() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (!squares[i][j].empty())
+                    return false;
+            }
+        }
+        return true;
+    }
 }
