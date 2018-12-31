@@ -17,12 +17,16 @@ public class Squares {
     }
 
     public void addX(RowIndex row, ColumnIndex column) {
-        Square square = squares[row.get()][column.get()];
+        Square square = squareFor(row, column);
         square.markAsX();
     }
 
+    private Square squareFor(RowIndex row, ColumnIndex column) {
+        return squares[row.get()][column.get()];
+    }
+
     public void addO(RowIndex row, ColumnIndex column) {
-        Square square = squares[row.get()][column.get()];
+        Square square = squareFor(row, column);
         square.markAsO();
     }
 }
