@@ -2,18 +2,7 @@ package tictactoe;
 
 public class TicTacToeGame {
 
-    private class WhoseTurn {
-        private boolean isPlayerX = true;
-
-        private void next() {
-            isPlayerX = !isPlayerX;
-        }
-
-        public boolean ofPlayerX() {
-            return isPlayerX;
-        }
-    }
-    private WhoseTurn turn = new WhoseTurn();
+    private TurnTracker turn = new TurnTracker();
 
     public GameState state() {
         return null;
