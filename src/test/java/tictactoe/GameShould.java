@@ -18,21 +18,4 @@ class GameShould {
         game = new Game();
     }
 
-    @Test
-    public void not_allow_player_X_to_go_twice() {
-        game.playerX(ROW_0, COLUMN_0);
-
-        assertThrows(OrderOfPlayException.class,
-                () -> game.playerX(ROW_0, COLUMN_1));
-    }
-
-    @Test
-    public void not_allow_player_O_to_go_twice() {
-        game.playerX(ROW_0, COLUMN_0);
-        game.playerO(ROW_1, COLUMN_0);
-
-        assertThrows(OrderOfPlayException.class,
-                () -> game.playerO(ROW_0, COLUMN_1));
-    }
-
 }

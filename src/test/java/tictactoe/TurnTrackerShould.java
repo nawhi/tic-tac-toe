@@ -20,4 +20,22 @@ class TurnTrackerShould {
                 () -> tracker.assertPlayerO());
     }
 
+    @Test
+    public void not_allow_player_X_to_go_twice() {
+        tracker.next();
+
+        assertThrows(OrderOfPlayException.class,
+                () -> tracker.assertPlayerX());
+    }
+
+    @Test
+    public void not_allow_player_O_to_go_twice() {
+        tracker.next();
+        tracker.next();
+
+        assertThrows(OrderOfPlayException.class,
+                () -> tracker.assertPlayerO());
+
+    }
+
 }
