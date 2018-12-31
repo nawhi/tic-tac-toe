@@ -12,4 +12,8 @@ public class Board {
         squares.addO(row, column);
 
     }
+
+    public GameState state() {
+        return null;
+    }
 }

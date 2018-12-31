@@ -6,7 +6,7 @@ public class Game {
     private Board board = new Board();
 
     public GameState state() {
-        return null;
+        return board.state();
     }
 
     public void playerX(RowIndex row, ColumnIndex column) {
