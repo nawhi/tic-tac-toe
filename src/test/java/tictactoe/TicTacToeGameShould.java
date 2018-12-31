@@ -11,11 +11,11 @@ class TicTacToeGameShould {
     public static final ColumnIndex COLUMN_0 = new ColumnIndex(0);
     public static final RowIndex ROW_1 = new RowIndex(1);
     public static final ColumnIndex COLUMN_1 = new ColumnIndex(1);
-    private TicTacToeGame game;
+    private Game game;
 
     @BeforeEach
     void setUp() {
-        game = new TicTacToeGame();
+        game = new Game();
     }
 
     @Test

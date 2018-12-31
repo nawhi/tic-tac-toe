@@ -11,7 +11,7 @@ class TicTacToeBoardShould {
 
     @Test
     public void prevent_adding_to_occupied_squares() {
-        var board = new TicTacToeBoard();
+        var board = new Board();
         board.addX(new RowIndex(0), new ColumnIndex(0));
         assertThrows(OccupiedSpaceException.class,
                 () -> board.addO(ROW_0, COLUMN_0));

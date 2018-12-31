@@ -1,6 +1,6 @@
 package tictactoe;
 
-public class TicTacToeSquare {
+public class Square {
 
     private enum SquareState {
         EMPTY,

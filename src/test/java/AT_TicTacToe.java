@@ -1,7 +1,7 @@
 import tictactoe.ColumnIndex;
 import tictactoe.GameState;
 import tictactoe.RowIndex;
-import tictactoe.TicTacToeGame;
+import tictactoe.Game;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -19,7 +19,7 @@ public class AT_TicTacToe {
 
     @Test
     public void game_is_draw_if_all_fields_are_occupied() {
-        TicTacToeGame game = new TicTacToeGame();
+        Game game = new Game();
 
         /*
          X │ X │ O

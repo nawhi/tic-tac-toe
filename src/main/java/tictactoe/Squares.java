@@ -1,24 +1,24 @@
 package tictactoe;
 
-public class TicTacToeSquares {
+public class Squares {
 
-    TicTacToeSquare[][] squares = new TicTacToeSquare[3][3];
+    Square[][] squares = new Square[3][3];
 
-    TicTacToeSquares() {
+    Squares() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                squares[i][j] = new TicTacToeSquare();
+                squares[i][j] = new Square();
             }
         }
     }
 
     public void addX(RowIndex row, ColumnIndex column) {
-        TicTacToeSquare square = squares[row.get()][column.get()];
+        Square square = squares[row.get()][column.get()];
         square.markAsX();
     }
 
     public void addO(RowIndex row, ColumnIndex column) {
-        TicTacToeSquare square = squares[row.get()][column.get()];
+        Square square = squares[row.get()][column.get()];
         square.markAsO();
     }
 }

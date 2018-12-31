@@ -1,8 +1,8 @@
 package tictactoe;
 
-public class TicTacToeBoard {
+public class Board {
 
-    TicTacToeSquares squares = new TicTacToeSquares();
+    Squares squares = new Squares();
 
     public void addX(RowIndex row, ColumnIndex column) {
         squares.addX(row, column);

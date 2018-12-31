@@ -1,9 +1,9 @@
 package tictactoe;
 
-public class TicTacToeGame {
+public class Game {
 
     private TurnTracker turn = new TurnTracker();
-    private TicTacToeBoard board = new TicTacToeBoard();
+    private Board board = new Board();
 
     public GameState state() {
         return null;
