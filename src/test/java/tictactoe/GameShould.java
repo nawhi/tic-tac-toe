@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class TicTacToeGameShould {
+class GameShould {
 
     public static final RowIndex ROW_0 = new RowIndex(0);
     public static final ColumnIndex COLUMN_0 = new ColumnIndex(0);
