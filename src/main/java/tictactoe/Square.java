@@ -1,9 +1,6 @@
 package tictactoe;
 
 public class Square {
-
-
-
     private enum SquareState {
         EMPTY,
         OCCUPIED_BY_X,

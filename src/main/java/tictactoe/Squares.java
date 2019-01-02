@@ -13,7 +13,9 @@ public class Squares {
     }
 
     private void initialiseRow(int row) {
-        IntStream.range(0, BOARD_SIZE).forEach(column -> squares[row][column] = new Square());
+        IntStream.range(0, BOARD_SIZE).forEach(column ->
+                squares[row][column] = new Square()
+        );
     }
 
     public void addO(SquareIndex index) {
