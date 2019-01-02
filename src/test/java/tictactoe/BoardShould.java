@@ -14,7 +14,7 @@ class BoardShould {
 
     @BeforeEach
     void setUp() {
-        board = new Board(new Squares());
+        board = new Board();
     }
 
     @Test
