@@ -1,6 +1,6 @@
 package tictactoe;
 
-class TurnTracker {
+public class TurnTracker {
     private boolean isPlayerX = true;
 
     public void next() {

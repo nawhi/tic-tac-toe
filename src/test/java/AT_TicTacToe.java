@@ -1,8 +1,5 @@
 import org.junit.jupiter.api.BeforeEach;
-import tictactoe.ColumnIndex;
-import tictactoe.GameState;
-import tictactoe.RowIndex;
-import tictactoe.Game;
+import tictactoe.*;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -30,7 +27,7 @@ public class AT_TicTacToe {
 
     @BeforeEach
     void setUp() {
-        game = new Game();
+        game = new Game(new Board(), new TurnTracker());
     }
 
     @Test

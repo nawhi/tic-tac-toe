@@ -2,23 +2,27 @@ package tictactoe;
 
 public class Game {
 
-    private TurnTracker turn = new TurnTracker();
-    private Board board = new Board();
+    private TurnTracker turnTracker;
+    private Board board;
+
+    public Game(Board board, TurnTracker turnTracker) {
+        this.board = board;
+        this.turnTracker = turnTracker;
+    }
 
     public GameState state() {
         return board.state();
     }
 
     public void playerX(RowIndex row, ColumnIndex column) {
-        turn.assertPlayerX();
+        turnTracker.assertPlayerX();
         board.addX(row, column);
-        turn.next();
+        turnTracker.next();
     }
 
-
     public void playerO(RowIndex row, ColumnIndex column) {
-        turn.assertPlayerO();
+        turnTracker.assertPlayerO();
         board.addO(row, column);
-        turn.next();
+        turnTracker.next();
     }
 }
