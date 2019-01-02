@@ -26,19 +26,12 @@ public class WinnerCalculator {
     }
 
     public boolean xHasWon() {
-        throw new UnsupportedOperationException("TODO");
-    }
-
-    public boolean oHasWon() {
-        throw new UnsupportedOperationException("TODO");
-    }
-
-    public GameOutcome getWinner() {
         for (Set<SquareIndex> winningSquares: WINNING_INDICES) {
             if (winningSquares.stream().allMatch(index -> squares.get(index).occupiedByX())) {
-                return GameOutcome.PLAYER_X_WINS;
+                return true;
             }
         }
-        return GameOutcome.DRAW;
+        return false;
     }
+
 }

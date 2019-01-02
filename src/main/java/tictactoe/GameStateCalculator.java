@@ -16,8 +16,7 @@ public class GameStateCalculator {
         if (allSquaresOccupied())
             return GameState.DRAW;
 
-        GameOutcome winner = winnerCalculator.getWinner();
-        if (winner == GameOutcome.PLAYER_X_WINS)
+        if (winnerCalculator.xHasWon())
             return GameState.PLAYER_X_WINS;
 
         return GameState.IN_PROGRESS;
