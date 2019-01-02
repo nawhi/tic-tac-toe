@@ -13,12 +13,16 @@ public class WinnerCalculatorShould {
             "XXX|---|---",
             "---|XXX|---",
             "---|---|XXX",
+            "X--|X--|X--",
+            "-X-|-X-|-X-",
+            "--X|--X|--X",
+            "X--|-X-|--X",
+            "--X|-X-|X--"
     })
     public void calculate_conditions_where_X_wins(String squareString) {
         Squares squares = parseSquares(squareString);
         WinnerCalculator winnerCalculator = new WinnerCalculator(squares);
         assertTrue(winnerCalculator.xHasWon());
-
     }
 
     private Squares parseSquares(String squareString) {
