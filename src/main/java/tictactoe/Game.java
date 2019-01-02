@@ -3,7 +3,7 @@ package tictactoe;
 public class Game {
 
     private TurnTracker turn = new TurnTracker();
-    private Board board = new Board();
+    private Board board = new Board(new Squares());
 
     public GameState state() {
         return board.state();
@@ -14,7 +14,6 @@ public class Game {
         board.addX(row, column);
         turn.next();
     }
-
 
     public void playerO(RowIndex row, ColumnIndex column) {
         turn.assertPlayerO();

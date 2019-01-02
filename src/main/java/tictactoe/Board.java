@@ -2,7 +2,11 @@ package tictactoe;
 
 public class Board {
 
-    Squares squares = new Squares();
+    private Squares squares;
+
+    public Board(Squares squares) {
+        this.squares = squares;
+    }
 
     public void addX(RowIndex row, ColumnIndex column) {
         squares.addX(row, column);
