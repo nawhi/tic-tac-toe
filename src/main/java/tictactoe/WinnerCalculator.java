@@ -34,4 +34,8 @@ public class WinnerCalculator {
         return false;
     }
 
+    public boolean oHasWon() {
+        throw new UnsupportedOperationException("TODO");
+    }
+
 }

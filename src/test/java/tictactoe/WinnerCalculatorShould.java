@@ -25,6 +25,24 @@ public class WinnerCalculatorShould {
         assertTrue(winnerCalculator.xHasWon());
     }
 
+    @ParameterizedTest
+    @CsvSource({
+            "OOO|---|---",
+            "---|OOO|---",
+            "---|---|OOO",
+            "O--|O--|O--",
+            "-O-|-O-|-O-",
+            "--O|--O|--O",
+            "O--|-O-|--O",
+            "--O|-O-|O--"
+    })
+    public void calculate_conditions_where_O_wins(String squareString) {
+        Squares squares = parseSquares(squareString);
+        WinnerCalculator winnerCalculator = new WinnerCalculator(squares);
+        assertTrue(winnerCalculator.oHasWon());
+    }
+
+
     private Squares parseSquares(String squareString) {
         Squares squares = new Squares();
         String[] rows = squareString.split("\\|");
