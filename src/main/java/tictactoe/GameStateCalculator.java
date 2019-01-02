@@ -22,10 +22,6 @@ public class GameStateCalculator {
         return GameState.IN_PROGRESS;
     }
 
-    private boolean allSquaresEmpty() {
-        return squares.all(square -> square.empty());
-    }
-
     private boolean allSquaresOccupied() {
         return squares.all(square -> !square.empty());
     }
