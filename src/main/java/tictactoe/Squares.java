@@ -9,15 +9,11 @@ public class Squares {
     Square[][] squares = new Square[BOARD_SIZE][BOARD_SIZE];
 
     Squares() {
-        for (int row = 0; row < BOARD_SIZE; row++) {
-            initialiseRow(row);
-        }
+        IntStream.range(0, BOARD_SIZE).forEach(this::initialiseRow);
     }
 
     private void initialiseRow(int row) {
-        for (int column = 0; column < BOARD_SIZE; column++) {
-            squares[row][column] = new Square();
-        }
+        IntStream.range(0, BOARD_SIZE).forEach(column -> squares[row][column] = new Square());
     }
 
     public void addO(SquareIndex index) {

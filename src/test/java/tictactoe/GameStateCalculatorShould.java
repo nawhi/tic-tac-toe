@@ -42,12 +42,11 @@ class GameStateCalculatorShould {
     }
 
     @Test
-    public void return_PLAYER_X_WINS_when_X_has_horizontal_three() {
-        squares.addX(new SquareIndex(0, 0));
-        squares.addX(new SquareIndex(0, 1));
-        squares.addX(new SquareIndex(0, 2));
+    public void return_PLAYER_O_WINS_when_O_has_three() {
+        squares.addO(new SquareIndex(0, 0));
+        squares.addO(new SquareIndex(0, 1));
+        squares.addO(new SquareIndex(0, 2));
 
-        assertEquals(GameState.PLAYER_X_WINS, calculator.calculate());
+        assertEquals(GameState.PLAYER_O_WINS, calculator.calculate());
     }
-
 }

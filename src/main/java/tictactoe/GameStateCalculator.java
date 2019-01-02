@@ -19,6 +19,9 @@ public class GameStateCalculator {
         if (winnerCalculator.xHasWon())
             return GameState.PLAYER_X_WINS;
 
+        if (winnerCalculator.oHasWon())
+            return GameState.PLAYER_O_WINS;
+
         return GameState.IN_PROGRESS;
     }
 
