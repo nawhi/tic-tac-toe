@@ -5,19 +5,19 @@ import java.util.stream.Stream;
 
 public class WinnerCalculator {
     private static final Set<Set<SquareIndex>> WINNING_INDICES = Set.of(
-            // horizontal
-            Set.of(new SquareIndex(0, 0), new SquareIndex(1, 0), new SquareIndex(2, 0)),
-            Set.of(new SquareIndex(0, 1), new SquareIndex(1, 1), new SquareIndex(2, 1)),
-            Set.of(new SquareIndex(0, 2), new SquareIndex(1, 2), new SquareIndex(2, 2)),
+        // horizontal
+        Set.of(new SquareIndex(0, 0), new SquareIndex(1, 0), new SquareIndex(2, 0)),
+        Set.of(new SquareIndex(0, 1), new SquareIndex(1, 1), new SquareIndex(2, 1)),
+        Set.of(new SquareIndex(0, 2), new SquareIndex(1, 2), new SquareIndex(2, 2)),
 
-            // vertical
-            Set.of(new SquareIndex(0, 0), new SquareIndex(0, 1), new SquareIndex(0, 2)),
-            Set.of(new SquareIndex(1, 0), new SquareIndex(1, 1), new SquareIndex(1, 2)),
-            Set.of(new SquareIndex(2, 0), new SquareIndex(2, 1), new SquareIndex(2, 2)),
+        // vertical
+        Set.of(new SquareIndex(0, 0), new SquareIndex(0, 1), new SquareIndex(0, 2)),
+        Set.of(new SquareIndex(1, 0), new SquareIndex(1, 1), new SquareIndex(1, 2)),
+        Set.of(new SquareIndex(2, 0), new SquareIndex(2, 1), new SquareIndex(2, 2)),
 
-            // diagonal
-            Set.of(new SquareIndex(0, 0), new SquareIndex(1, 1), new SquareIndex(2, 2)),
-            Set.of(new SquareIndex(2, 0), new SquareIndex(1, 1), new SquareIndex(0, 2))
+        // diagonal
+        Set.of(new SquareIndex(0, 0), new SquareIndex(1, 1), new SquareIndex(2, 2)),
+        Set.of(new SquareIndex(2, 0), new SquareIndex(1, 1), new SquareIndex(0, 2))
     );
 
     private Squares squares;
