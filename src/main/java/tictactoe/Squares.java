@@ -29,14 +29,10 @@ public class Squares {
     }
 
     public boolean allOccupied() {
-        return allSquares(square -> !square.empty());
+        return all(square -> !square.empty());
     }
 
-    public boolean allEmpty() {
-        return allSquares(square -> square.empty());
-    }
-
-    private boolean allSquares(Predicate<Square> predicate) {
+    public boolean all(Predicate<Square> predicate) {
         return squareStream().allMatch(row -> allSquaresInRow(row, predicate));
     }
 

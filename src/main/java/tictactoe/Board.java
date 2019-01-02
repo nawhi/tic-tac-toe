@@ -13,7 +13,7 @@ public class Board {
     }
 
     public GameState state() {
-        if (squares.allEmpty())
+        if (allSquaresEmpty())
             return GameState.INITIAL;
 
         if (squares.allOccupied())
@@ -23,5 +23,9 @@ public class Board {
             return GameState.PLAYER_X_WINS;
 
         return GameState.IN_PROGRESS;
+    }
+
+    private boolean allSquaresEmpty() {
+        return squares.all(square -> square.empty());
     }
 }
