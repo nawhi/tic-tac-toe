@@ -47,4 +47,8 @@ public class Squares {
     private boolean allSquaresInRow(int row, Predicate<Square> predicate) {
         return squareStream().allMatch(column -> predicate.test(squares[row][column]));
     }
+
+    public boolean hasRowOfX() {
+        return squareStream().anyMatch(row -> allSquaresInRow(row, square -> square.occupiedByX()));
+    }
 }

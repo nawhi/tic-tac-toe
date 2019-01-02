@@ -9,7 +9,11 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 class BoardShould {
 
     public static final RowIndex ROW_0 = new RowIndex(0);
+    public static final RowIndex ROW_1 = new RowIndex(1);
+    public static final RowIndex ROW_2 = new RowIndex(2);
     public static final ColumnIndex COLUMN_0 = new ColumnIndex(0);
+    public static final ColumnIndex COLUMN_1 = new ColumnIndex(1);
+    public static final ColumnIndex COLUMN_2 = new ColumnIndex(2);
     private Board board;
 
     @BeforeEach
@@ -41,6 +45,15 @@ class BoardShould {
         board.addX(new RowIndex(2), new ColumnIndex(1));
 
         assertEquals(GameState.DRAW, board.state());
+    }
+
+    @Test
+    public void have_PLAYER_X_WINS_state_when_X_has_horizontal_three() {
+        board.addX(ROW_0, COLUMN_0);
+        board.addX(ROW_0, COLUMN_1);
+        board.addX(ROW_0, COLUMN_2);
+
+        assertEquals(GameState.PLAYER_X_WINS, board.state());
     }
 
     @Test

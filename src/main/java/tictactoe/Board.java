@@ -19,6 +19,9 @@ public class Board {
         if (squares.allOccupied())
             return GameState.DRAW;
 
+        if (squares.hasRowOfX())
+            return GameState.PLAYER_X_WINS;
+
         return GameState.IN_PROGRESS;
     }
 }
