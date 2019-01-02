@@ -20,24 +20,12 @@ public class Squares {
         return IntStream.range(0, BOARD_SIZE);
     }
 
-    public void addX(RowIndex row, ColumnIndex column) {
-        squareFor(row, column).markAsX();
-    }
-
-    public void addO(RowIndex row, ColumnIndex column) {
-        squareFor(row, column).markAsO();
-    }
-
     public void addO(SquareIndex index) {
         squares[index.row()][index.column()].markAsO();
     }
 
     public void addX(SquareIndex index) {
         squares[index.row()][index.column()].markAsX();
-    }
-
-    private Square squareFor(RowIndex row, ColumnIndex column) {
-        return squares[row.get()][column.get()];
     }
 
     public boolean allOccupied() {

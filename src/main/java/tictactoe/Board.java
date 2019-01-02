@@ -4,16 +4,8 @@ public class Board {
 
     Squares squares = new Squares();
 
-    public void addX(RowIndex row, ColumnIndex column) {
-        squares.addX(row, column);
-    }
-
     public void addX(SquareIndex index) {
         squares.addX(index);
-    }
-
-    public void addO(RowIndex row, ColumnIndex column) {
-        squares.addO(row, column);
     }
 
     public void addO(SquareIndex index) {
