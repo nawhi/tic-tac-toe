@@ -9,23 +9,24 @@ public class Squares {
     Square[][] squares = new Square[BOARD_SIZE][BOARD_SIZE];
 
     Squares() {
-        squareStream().forEach(this::initialiseRow);
+        for (int row = 0; row < BOARD_SIZE; row++) {
+            initialiseRow(row);
+        }
     }
 
     private void initialiseRow(int row) {
-        squareStream().forEach(column -> squares[row][column] = new Square());
+        for (int column = 0; column < BOARD_SIZE; column++) {
+            squares[row][column] = new Square();
+        }
     }
 
-    public IntStream squareStream() {
-        return IntStream.range(0, BOARD_SIZE);
-    }
 
     public void addO(SquareIndex index) {
-        squares[index.row()][index.column()].markAsO();
+        get(index).markAsO();
     }
 
     public void addX(SquareIndex index) {
-        squares[index.row()][index.column()].markAsX();
+        get(index).markAsX();
     }
 
     public Square get(SquareIndex index) {
@@ -40,4 +41,7 @@ public class Squares {
         return squareStream().allMatch(column -> predicate.test(squares[row][column]));
     }
 
+    private IntStream squareStream() {
+        return IntStream.range(0, BOARD_SIZE);
+    }
 }
