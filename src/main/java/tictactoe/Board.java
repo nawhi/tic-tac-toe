@@ -13,7 +13,7 @@ public class Board {
     }
 
     public GameState state() {
-        return new GameStateCalculator(squares).invoke();
+        return new GameStateCalculator(squares).calculate();
     }
 
 }

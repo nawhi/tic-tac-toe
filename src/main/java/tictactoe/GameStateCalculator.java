@@ -25,7 +25,7 @@ public class GameStateCalculator {
         this.squares = squares;
     }
 
-    public GameState invoke() {
+    public GameState calculate() {
         if (allSquaresEmpty())
             return GameState.INITIAL;
 
