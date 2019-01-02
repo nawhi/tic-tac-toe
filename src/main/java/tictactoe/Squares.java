@@ -20,7 +20,6 @@ public class Squares {
         }
     }
 
-
     public void addO(SquareIndex index) {
         get(index).markAsO();
     }
@@ -43,5 +42,13 @@ public class Squares {
 
     private IntStream squareStream() {
         return IntStream.range(0, BOARD_SIZE);
+    }
+
+    public boolean isX(SquareIndex index) {
+        return get(index).occupiedByX();
+    }
+
+    public boolean isO(SquareIndex index) {
+        return get(index).occupiedByO();
     }
 }

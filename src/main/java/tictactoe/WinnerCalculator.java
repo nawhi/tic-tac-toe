@@ -1,6 +1,7 @@
 package tictactoe;
 
 import java.util.Set;
+import java.util.stream.Stream;
 
 public class WinnerCalculator {
     private static final Set<Set<SquareIndex>> WINNING_INDICES = Set.of(
@@ -26,21 +27,23 @@ public class WinnerCalculator {
     }
 
     public boolean xHasWon() {
-        for (Set<SquareIndex> winningSquares: WINNING_INDICES) {
-            if (winningSquares.stream().allMatch(index -> squares.get(index).occupiedByX())) {
-                return true;
-            }
-        }
-        return false;
+        return winningIndicesStream().anyMatch(this::allOccupiedByX);
     }
 
     public boolean oHasWon() {
-        for (Set<SquareIndex> winningSquares: WINNING_INDICES) {
-            if (winningSquares.stream().allMatch(index -> squares.get(index).occupiedByO())) {
-                return true;
-            }
-        }
-        return false;
+        return winningIndicesStream().anyMatch(this::allOccupiedByO);
+    }
+
+    private Stream<Set<SquareIndex>> winningIndicesStream() {
+        return WINNING_INDICES.stream();
+    }
+
+    private boolean allOccupiedByX(Set<SquareIndex> indices) {
+        return indices.stream().allMatch(squares::isX);
+    }
+
+    private boolean allOccupiedByO(Set<SquareIndex> indices) {
+        return indices.stream().allMatch(squares::isO);
     }
 
 }
