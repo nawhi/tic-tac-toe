@@ -16,11 +16,6 @@ class GameStateCalculatorShould {
     }
 
     @Test
-    public void return_INITIAL_with_blank_board() {
-        assertEquals(GameState.INITIAL, calculator.calculate());
-    }
-
-    @Test
     public void return_IN_PROGRESS_when_half_full() {
         squares.addX(new SquareIndex(0, 0));
         assertEquals(GameState.IN_PROGRESS, calculator.calculate());

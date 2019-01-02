@@ -10,9 +10,6 @@ public class GameStateCalculator {
     }
 
     public GameState calculate() {
-        if (allSquaresEmpty())
-            return GameState.INITIAL;
-
         if (allSquaresOccupied())
             return GameState.DRAW;
 
