@@ -35,7 +35,12 @@ public class WinnerCalculator {
     }
 
     public boolean oHasWon() {
-        throw new UnsupportedOperationException("TODO");
+        for (Set<SquareIndex> winningSquares: WINNING_INDICES) {
+            if (winningSquares.stream().allMatch(index -> squares.get(index).occupiedByO())) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }

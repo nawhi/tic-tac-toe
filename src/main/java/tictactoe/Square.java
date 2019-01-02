@@ -2,6 +2,8 @@ package tictactoe;
 
 public class Square {
 
+
+
     private enum SquareState {
         EMPTY,
         OCCUPIED_BY_X,
@@ -16,6 +18,10 @@ public class Square {
 
     public boolean occupiedByX() {
         return state == SquareState.OCCUPIED_BY_X;
+    }
+
+    public boolean occupiedByO() {
+        return state == SquareState.OCCUPIED_BY_O;
     }
 
     public void markAsO() {

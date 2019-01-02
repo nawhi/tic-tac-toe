@@ -50,8 +50,10 @@ public class WinnerCalculatorShould {
         for (int row = 0; row < 3; row++) {
             String rowString = rows[row];
             for (int column = 0; column < 3; column++) {
-                if (rowString.charAt(column) == 'X') {
-                    squares.addX(new SquareIndex(row, column));
+                switch(rowString.charAt(column))
+                {
+                    case 'X': squares.addX(new SquareIndex(row, column)); break;
+                    case 'O': squares.addO(new SquareIndex(row, column)); break;
                 }
             }
         }
