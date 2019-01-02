@@ -28,6 +28,10 @@ public class Squares {
         squares[index.row()][index.column()].markAsX();
     }
 
+    public Square get(SquareIndex index) {
+        return squares[index.row()][index.column()];
+    }
+
     public boolean all(Predicate<Square> predicate) {
         return squareStream().allMatch(row -> allSquaresInRow(row, predicate));
     }
@@ -36,7 +40,4 @@ public class Squares {
         return squareStream().allMatch(column -> predicate.test(squares[row][column]));
     }
 
-    public boolean hasRowOfX() {
-        return squareStream().anyMatch(row -> allSquaresInRow(row, square -> square.occupiedByX()));
-    }
 }
