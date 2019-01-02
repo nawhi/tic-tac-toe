@@ -1,21 +1,23 @@
 package tictactoe;
 
 import java.util.function.Predicate;
+import java.util.stream.IntStream;
 
 public class Squares {
 
-    Square[][] squares = new Square[3][3];
+    public static final int BOARD_SIZE = 3;
+    Square[][] squares = new Square[BOARD_SIZE][BOARD_SIZE];
 
     Squares() {
-        for (int i = 0; i < 3; i++) {
-            initialiseColumn(i);
-        }
+        squareStream().forEach(this::initialiseRow);
     }
 
-    private void initialiseColumn(int i) {
-        for (int j = 0; j < 3; j++) {
-            squares[i][j] = new Square();
-        }
+    private void initialiseRow(int row) {
+        squareStream().forEach(column -> squares[row][column] = new Square());
+    }
+
+    public IntStream squareStream() {
+        return IntStream.range(0, BOARD_SIZE);
     }
 
     public void addX(RowIndex row, ColumnIndex column) {
@@ -39,19 +41,10 @@ public class Squares {
     }
 
     private boolean allSquares(Predicate<Square> predicate) {
-        for (int row = 0; row < 3; row++) {
-            if (!allSquaresInRow(row, predicate))
-                return false;
-        }
-        return true;
+        return squareStream().allMatch(row -> allSquaresInRow(row, predicate));
     }
 
     private boolean allSquaresInRow(int row, Predicate<Square> predicate) {
-        for (int column = 0; column < 3; column++) {
-            if (!predicate.test(squares[row][column])) {
-                return false;
-            }
-        }
-        return true;
+        return squareStream().allMatch(column -> predicate.test(squares[row][column]));
     }
 }
