@@ -20,9 +20,21 @@ public class Game {
         turnTracker.next();
     }
 
+    public void playerX(SquareIndex index) {
+        turnTracker.assertPlayerX();
+        board.addX(index);
+        turnTracker.next();
+    }
+
     public void playerO(RowIndex row, ColumnIndex column) {
         turnTracker.assertPlayerO();
         board.addO(row, column);
+        turnTracker.next();
+    }
+
+    public void playerO(SquareIndex index) {
+        turnTracker.assertPlayerO();
+        board.addO(index);
         turnTracker.next();
     }
 }

@@ -28,6 +28,14 @@ public class Squares {
         squareFor(row, column).markAsO();
     }
 
+    public void addO(SquareIndex index) {
+        squares[index.row()][index.column()].markAsO();
+    }
+
+    public void addX(SquareIndex index) {
+        squares[index.row()][index.column()].markAsX();
+    }
+
     private Square squareFor(RowIndex row, ColumnIndex column) {
         return squares[row.get()][column.get()];
     }

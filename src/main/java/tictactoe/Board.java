@@ -8,8 +8,16 @@ public class Board {
         squares.addX(row, column);
     }
 
+    public void addX(SquareIndex index) {
+        squares.addX(index);
+    }
+
     public void addO(RowIndex row, ColumnIndex column) {
         squares.addO(row, column);
+    }
+
+    public void addO(SquareIndex index) {
+        squares.addO(index);
     }
 
     public GameState state() {

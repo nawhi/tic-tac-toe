@@ -6,14 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AT_TicTacToe {
 
-    public static final RowIndex ROW_0 = new RowIndex(0);
-    public static final RowIndex ROW_1 = new RowIndex(1);
-    public static final RowIndex ROW_2 = new RowIndex(2);
-    public static final ColumnIndex COLUMN_0 = new ColumnIndex(0);
-    public static final ColumnIndex COLUMN_1 = new ColumnIndex(1);
-    public static final ColumnIndex COLUMN_2 = new ColumnIndex(2);
-
-
     private Game game;
 
     /*
@@ -39,15 +31,15 @@ public class AT_TicTacToe {
         ───┼───┼───
          X │ O │ O
          */
-        game.playerX(ROW_1, COLUMN_0);
-        game.playerO(ROW_0, COLUMN_1);
-        game.playerX(ROW_1, COLUMN_1);
-        game.playerO(ROW_1, COLUMN_2);
-        game.playerX(ROW_0, COLUMN_0);
-        game.playerO(ROW_2, COLUMN_2);
-        game.playerX(ROW_0, COLUMN_2);
-        game.playerO(ROW_2, COLUMN_0);
-        game.playerX(ROW_2, COLUMN_1);
+        game.playerX(new SquareIndex(1, 0));
+        game.playerO(new SquareIndex(0, 1));
+        game.playerX(new SquareIndex(1, 1));
+        game.playerO(new SquareIndex(1, 2));
+        game.playerX(new SquareIndex(0, 0));
+        game.playerO(new SquareIndex(2, 2));
+        game.playerX(new SquareIndex(0, 2));
+        game.playerO(new SquareIndex(2, 0));
+        game.playerX(new SquareIndex(2, 1));
 
         assertEquals(GameState.DRAW, game.state());
     }
@@ -61,11 +53,11 @@ public class AT_TicTacToe {
         ───┼───┼───
          X │   │
          */
-        game.playerX(ROW_0, COLUMN_0);
-        game.playerO(ROW_0, COLUMN_1);
-        game.playerX(ROW_1, COLUMN_0);
-        game.playerO(ROW_0, COLUMN_2);
-        game.playerX(ROW_2, COLUMN_0);
+        game.playerX(new SquareIndex(0, 0));
+        game.playerO(new SquareIndex(0, 1));
+        game.playerX(new SquareIndex(1, 0));
+        game.playerO(new SquareIndex(0, 2));
+        game.playerX(new SquareIndex(2, 0));
 
         assertEquals(GameState.PLAYER_X_WINS, game.state());
     }
