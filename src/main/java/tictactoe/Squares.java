@@ -28,10 +28,6 @@ public class Squares {
         squares[index.row()][index.column()].markAsX();
     }
 
-    public boolean allOccupied() {
-        return all(square -> !square.empty());
-    }
-
     public boolean all(Predicate<Square> predicate) {
         return squareStream().allMatch(row -> allSquaresInRow(row, predicate));
     }

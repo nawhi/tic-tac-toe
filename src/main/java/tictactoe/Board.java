@@ -16,13 +16,17 @@ public class Board {
         if (allSquaresEmpty())
             return GameState.INITIAL;
 
-        if (squares.allOccupied())
+        if (allSquaresOccupied())
             return GameState.DRAW;
 
         if (squares.hasRowOfX())
             return GameState.PLAYER_X_WINS;
 
         return GameState.IN_PROGRESS;
+    }
+
+    private boolean allSquaresOccupied() {
+        return squares.all(square -> !square.empty());
     }
 
     private boolean allSquaresEmpty() {
