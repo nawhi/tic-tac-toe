@@ -4,7 +4,6 @@ import java.util.function.Predicate;
 import java.util.stream.IntStream;
 
 class Squares {
-
     private static final int BOARD_SIZE = 3;
     private final Square[][] squares = new Square[BOARD_SIZE][BOARD_SIZE];
 
@@ -16,19 +15,27 @@ class Squares {
         boardRange().forEach(column -> squares[row][column] = new Square());
     }
 
-    public void addO(SquareIndex index) {
-        get(index).markAsO();
+    void addO(SquareIndex index) {
+        squareAt(index).markAsO();
     }
 
-    public void addX(SquareIndex index) {
-        get(index).markAsX();
+    void addX(SquareIndex index) {
+        squareAt(index).markAsX();
     }
 
-    private Square get(SquareIndex index) {
+    boolean isX(SquareIndex index) {
+        return squareAt(index).occupiedByX();
+    }
+
+    boolean isO(SquareIndex index) {
+        return squareAt(index).occupiedByO();
+    }
+
+    private Square squareAt(SquareIndex index) {
         return squares[index.row()][index.column()];
     }
 
-    public boolean all(Predicate<Square> predicate) {
+    boolean all(Predicate<Square> predicate) {
         return boardRange().allMatch(row -> allSquaresInRow(row, predicate));
     }
 
@@ -38,13 +45,5 @@ class Squares {
 
     private IntStream boardRange() {
         return IntStream.range(0, BOARD_SIZE);
-    }
-
-    public boolean isX(SquareIndex index) {
-        return get(index).occupiedByX();
-    }
-
-    public boolean isO(SquareIndex index) {
-        return get(index).occupiedByO();
     }
 }

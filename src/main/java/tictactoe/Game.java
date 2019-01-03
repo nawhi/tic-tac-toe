@@ -1,7 +1,6 @@
 package tictactoe;
 
 public class Game {
-
     private final TurnTracker turnTracker;
     private final Board board;
 

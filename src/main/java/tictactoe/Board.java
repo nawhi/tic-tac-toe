@@ -1,7 +1,6 @@
 package tictactoe;
 
 public class Board {
-
     private final Squares squares = new Squares();
     private final GameStateCalculator stateCalculator = new GameStateCalculator(squares);
 
@@ -16,5 +15,4 @@ public class Board {
     GameState state() {
         return stateCalculator.calculate();
     }
-
 }

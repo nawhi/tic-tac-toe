@@ -32,5 +32,4 @@ class GameStateCalculator {
     private boolean allSquaresOccupied() {
         return squares.all(square -> square.occupied());
     }
-
 }

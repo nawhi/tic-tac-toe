@@ -6,7 +6,6 @@ class Square {
         OCCUPIED_BY_X,
         OCCUPIED_BY_O
     }
-
     private SquareState state = SquareState.EMPTY;
 
     boolean occupied() {
