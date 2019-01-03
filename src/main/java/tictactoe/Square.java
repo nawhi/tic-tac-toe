@@ -1,6 +1,6 @@
 package tictactoe;
 
-public class Square {
+class Square {
     private enum SquareState {
         EMPTY,
         OCCUPIED_BY_X,
@@ -9,30 +9,30 @@ public class Square {
 
     private SquareState state = SquareState.EMPTY;
 
-    public boolean empty() {
-        return state == SquareState.EMPTY;
+    boolean occupied() {
+        return state != SquareState.EMPTY;
     }
 
-    public boolean occupiedByX() {
+    boolean occupiedByX() {
         return state == SquareState.OCCUPIED_BY_X;
     }
 
-    public boolean occupiedByO() {
+    boolean occupiedByO() {
         return state == SquareState.OCCUPIED_BY_O;
     }
 
-    public void markAsO() {
+    void markAsO() {
         assertEmpty();
         state = SquareState.OCCUPIED_BY_O;
     }
 
-    public void markAsX() {
+    void markAsX() {
         assertEmpty();
         state = SquareState.OCCUPIED_BY_X;
     }
 
     private void assertEmpty() {
-        if (!empty())
+        if (occupied())
             throw new OccupiedSpaceException("This space is already occupied");
     }
 }

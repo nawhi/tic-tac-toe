@@ -14,7 +14,7 @@ class BoardShould {
     }
 
     @Test
-    public void prevent_adding_to_occupied_squares() {
+    void prevent_adding_to_occupied_squares() {
         SquareIndex index = new SquareIndex(0, 0);
         board.addX(index);
         assertThrows(OccupiedSpaceException.class,

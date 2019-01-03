@@ -1,8 +1,12 @@
 package tictactoe;
 
-public class GameStateCalculator {
-    private Squares squares;
-    private WinnerCalculator winnerCalculator;
+import java.util.Optional;
+
+import static tictactoe.GameState.*;
+
+class GameStateCalculator {
+    private final Squares squares;
+    private final WinnerCalculator winnerCalculator;
 
     public GameStateCalculator(Squares squares) {
         this.squares = squares;
@@ -11,19 +15,22 @@ public class GameStateCalculator {
 
     public GameState calculate() {
         if (allSquaresOccupied())
-            return GameState.DRAW;
+            return DRAW;
+        return getWinner().orElse(IN_PROGRESS);
+    }
 
+    private Optional<GameState> getWinner() {
         if (winnerCalculator.xHasWon())
-            return GameState.PLAYER_X_WINS;
+            return Optional.of(PLAYER_X_WINS);
 
         if (winnerCalculator.oHasWon())
-            return GameState.PLAYER_O_WINS;
+            return Optional.of(PLAYER_O_WINS);
 
-        return GameState.IN_PROGRESS;
+        return Optional.empty();
     }
 
     private boolean allSquaresOccupied() {
-        return squares.all(square -> !square.empty());
+        return squares.all(square -> square.occupied());
     }
 
 }

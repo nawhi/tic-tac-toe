@@ -5,7 +5,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class WinnerCalculatorShould {
+class WinnerCalculatorShould {
 
     @ParameterizedTest
     @CsvSource({
@@ -18,7 +18,7 @@ public class WinnerCalculatorShould {
             "X--|-X-|--X",
             "--X|-X-|X--"
     })
-    public void calculate_conditions_where_X_wins(String squareString) {
+    void calculate_conditions_where_X_wins(String squareString) {
         Squares squares = parseSquares(squareString);
         WinnerCalculator winnerCalculator = new WinnerCalculator(squares);
         assertTrue(winnerCalculator.xHasWon());
@@ -35,7 +35,7 @@ public class WinnerCalculatorShould {
             "O--|-O-|--O",
             "--O|-O-|O--"
     })
-    public void calculate_conditions_where_O_wins(String squareString) {
+    void calculate_conditions_where_O_wins(String squareString) {
         Squares squares = parseSquares(squareString);
         WinnerCalculator winnerCalculator = new WinnerCalculator(squares);
         assertTrue(winnerCalculator.oHasWon());

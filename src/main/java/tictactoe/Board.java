@@ -2,18 +2,19 @@ package tictactoe;
 
 public class Board {
 
-    Squares squares = new Squares();
+    private final Squares squares = new Squares();
+    private final GameStateCalculator stateCalculator = new GameStateCalculator(squares);
 
-    public void addX(SquareIndex index) {
+    void addX(SquareIndex index) {
         squares.addX(index);
     }
 
-    public void addO(SquareIndex index) {
+    void addO(SquareIndex index) {
         squares.addO(index);
     }
 
-    public GameState state() {
-        return new GameStateCalculator(squares).calculate();
+    GameState state() {
+        return stateCalculator.calculate();
     }
 
 }

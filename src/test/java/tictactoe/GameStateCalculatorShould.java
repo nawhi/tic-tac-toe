@@ -16,13 +16,13 @@ class GameStateCalculatorShould {
     }
 
     @Test
-    public void return_IN_PROGRESS_when_half_full() {
+    void return_IN_PROGRESS_when_half_full() {
         squares.addX(new SquareIndex(0, 0));
         assertEquals(GameState.IN_PROGRESS, calculator.calculate());
     }
 
     @Test
-    public void return_DRAW_when_filled_without_a_win() {
+    void return_DRAW_when_filled_without_a_win() {
         squares.addX(new SquareIndex(1, 0));
         squares.addO(new SquareIndex(0, 1));
         squares.addX(new SquareIndex(1, 1));
@@ -37,7 +37,7 @@ class GameStateCalculatorShould {
     }
 
     @Test
-    public void return_PLAYER_O_WINS_when_O_has_three() {
+    void return_PLAYER_O_WINS_when_O_has_three() {
         squares.addO(new SquareIndex(0, 0));
         squares.addO(new SquareIndex(0, 1));
         squares.addO(new SquareIndex(0, 2));

@@ -20,7 +20,7 @@ class GameShould {
     }
 
     @Test
-    public void add_X_at_correct_position() {
+    void add_X_at_correct_position() {
         SquareIndex index = new SquareIndex(0, 0);
         game.playerX(index);
 
@@ -29,7 +29,7 @@ class GameShould {
     }
 
     @Test
-    public void add_O_at_correct_position() {
+    void add_O_at_correct_position() {
         SquareIndex topLeft = new SquareIndex(0, 0);
         SquareIndex centre = new SquareIndex(1, 1);
 

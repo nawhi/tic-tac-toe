@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class AT_TicTacToe {
+class AT_TicTacToe {
 
     private Game game;
 
@@ -23,7 +23,7 @@ public class AT_TicTacToe {
     }
 
     @Test
-    public void game_is_draw_if_all_fields_are_occupied() {
+    void game_is_draw_if_all_fields_are_occupied() {
         /*
          X │ X │ O
         ───┼───┼───
@@ -45,7 +45,7 @@ public class AT_TicTacToe {
     }
 
     @Test
-    public void X_wins_if_they_have_three_in_a_row() {
+    void a_player_wins_if_they_have_three_in_a_row() {
         /*
          X │ O │ O
         ───┼───┼───

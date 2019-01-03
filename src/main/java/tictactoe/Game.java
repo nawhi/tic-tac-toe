@@ -2,8 +2,8 @@ package tictactoe;
 
 public class Game {
 
-    private TurnTracker turnTracker;
-    private Board board;
+    private final TurnTracker turnTracker;
+    private final Board board;
 
     public Game(Board board, TurnTracker turnTracker) {
         this.board = board;

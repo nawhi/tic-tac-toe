@@ -15,13 +15,13 @@ class TurnTrackerShould {
     }
 
     @Test
-    public void not_allow_player_0_to_go_first() {
+    void not_allow_player_0_to_go_first() {
         assertThrows(OrderOfPlayException.class,
                 () -> tracker.assertPlayerO());
     }
 
     @Test
-    public void not_allow_player_X_to_go_twice() {
+    void not_allow_player_X_to_go_twice() {
         tracker.next();
 
         assertThrows(OrderOfPlayException.class,
@@ -29,7 +29,7 @@ class TurnTrackerShould {
     }
 
     @Test
-    public void not_allow_player_O_to_go_twice() {
+    void not_allow_player_O_to_go_twice() {
         tracker.next();
         tracker.next();
 

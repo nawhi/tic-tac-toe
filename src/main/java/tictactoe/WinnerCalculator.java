@@ -3,7 +3,7 @@ package tictactoe;
 import java.util.Set;
 import java.util.stream.Stream;
 
-public class WinnerCalculator {
+class WinnerCalculator {
     private static final Set<Set<SquareIndex>> WINNING_INDICES = Set.of(
         // horizontal
         Set.of(new SquareIndex(0, 0), new SquareIndex(1, 0), new SquareIndex(2, 0)),
@@ -20,7 +20,7 @@ public class WinnerCalculator {
         Set.of(new SquareIndex(2, 0), new SquareIndex(1, 1), new SquareIndex(0, 2))
     );
 
-    private Squares squares;
+    private final Squares squares;
 
     public WinnerCalculator(Squares squares) {
         this.squares = squares;
